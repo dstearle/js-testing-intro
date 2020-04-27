@@ -1,11 +1,11 @@
-exports.generateText = (name, age) => {
-  // Returns output text
-  // return `${name} (${age} years old)`;
+// exports.generateText = (name, age) => {
+//   // Returns output text
+//   // return `${name} (${age} years old)`;
 
-  // Example of false positive output
-  return `Muldoon (35 years old)`;
+//   // Example of false positive output
+//   return `Muldoon (35 years old)`;
 
-};
+// };
 
 exports.createElement = (type, text, className) => {
   // Creates a new HTML element and returns it
@@ -15,7 +15,31 @@ exports.createElement = (type, text, className) => {
   return newElement;
 };
 
-exports.validateInput = (text, notEmpty, isNumber) => {
+// exports.validateInput = (text, notEmpty, isNumber) => {
+//   // Validate user input with two pre-defined rules
+//   if (!text) {
+//     return false;
+//   }
+//   if (notEmpty && text.trim().length === 0) {
+//     return false;
+//   }
+//   if (isNumber && +text === NaN) {
+//     return false;
+//   }
+//   return true;
+// };
+
+
+
+// ******* For Integration Tests *******
+
+const generateText = (name, age) => {
+  // Returns output text
+  return `${name} (${age} years old)`;
+
+};
+
+const validateInput = (text, notEmpty, isNumber) => {
   // Validate user input with two pre-defined rules
   if (!text) {
     return false;
@@ -28,3 +52,21 @@ exports.validateInput = (text, notEmpty, isNumber) => {
   }
   return true;
 };
+
+exports.checkAndGenerate = (name, age) => {
+
+  if (
+      !validateInput(name, true, false) ||
+      !validateInput(age, false, true)
+  ) 
+  
+  {
+      return false;
+  }
+
+  return generateText(name, age);
+
+}
+
+exports.generateText = generateText;
+exports.validateInput = validateInput;
