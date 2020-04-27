@@ -1,6 +1,10 @@
 exports.generateText = (name, age) => {
   // Returns output text
-  return `${name} (${age} years old)`;
+  // return `${name} (${age} years old)`;
+
+  // Example of false positive output
+  return `Muldoon (29 years old)`;
+
 };
 
 exports.createElement = (type, text, className) => {

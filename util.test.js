@@ -1,3 +1,5 @@
+// ******* Unit Tests *******
+
 // Imports your test in
 const { generateText } = require('./util');
 
@@ -9,5 +11,16 @@ test('should output name and age', () => {
 
     // The expected result
     expect(text).toBe('Muldoon (29 years old)');
+
+});
+
+// Test for checking false positive
+test('should output data-less text', () => {
+
+    // Sets null inputs
+    const text = generateText('', null);
+
+    // Output should not return anything from input
+    expect(text).toBe(' (null years old)');
 
 });
