@@ -1,5 +1,5 @@
 // Imports your test in
-const { generateText } = require('.util');
+const { generateText } = require('./util');
 
 // Test for text output
 test('should output name and age', () => {
