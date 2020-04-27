@@ -1,7 +1,9 @@
-// ******* Unit Tests *******
+// Imports your functions in for testing
+const { generateText, checkAndGenerate } = require('./util');
 
-// Imports your test in
-const { generateText } = require('./util');
+
+
+// ******* Unit Tests *******
 
 // Test for text output
 test('should output name and age', () => {
@@ -30,3 +32,16 @@ test('should output data-less text', () => {
     expect(text).toBe(' (null years old)');
 
 });
+
+
+
+// ******* Integration Tests *******
+
+test('should generate a valid text output', () => {
+
+    // The generated text
+    const text = checkAndGenerate('Robert', 35);
+    // The expected result
+    expect(text).toBe('Robert (35 years old)');
+
+})
