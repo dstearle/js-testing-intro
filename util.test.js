@@ -55,7 +55,7 @@ test('should generate a valid text output', () => {
 
 test('should click around', async () => {
 
-    // Launches Chrome browser from puppeteer
+    // Launches Chromium browser from puppeteer
     const browser = await puppeteer.launch({
 
         headless:false,
@@ -66,7 +66,16 @@ test('should click around', async () => {
 
     // Creates a new page
     const page = await browser.newPage();
-    // The page to go to
+    // The page we inted to go to
     await page.goto('http://127.0.0.1:5500/');
+
+    // Clicks the input field for adding a name
+    await page.click('input#name');
+    // Name to be typed into the name input field
+    await page.type('input#name', 'Hammond');
+    // Clicks the input field for adding age
+    await page.click('input#age');
+    // Age to be typed into the name input field
+    await page.type('input#age', '69');
 
 });
