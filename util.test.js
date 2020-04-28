@@ -64,4 +64,9 @@ test('should click around', async () => {
 
     });
 
+    // Creates a new page
+    const page = await browser.newPage();
+    // The page to go to
+    await page.goto('http://127.0.0.1:5500/');
+
 });
