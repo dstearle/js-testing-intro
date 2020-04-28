@@ -1,3 +1,6 @@
+// Imports in puppeteer for chrome simulation
+const puppeteer = require('puppeteer');
+
 // Imports your functions in for testing
 const { generateText, checkAndGenerate } = require('./util');
 
