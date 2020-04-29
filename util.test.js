@@ -81,4 +81,8 @@ test('should click around', async () => {
     // Clicks the button to add the user's info
     await page.click('#btnAddUser');
 
+    // The out of the submitted user information to be checked
+    const finalText = await page.$eval('.user-item', el => el.textContent);
+    expect(finalText).toBe('Hammond (69 years old)');
+
 });
