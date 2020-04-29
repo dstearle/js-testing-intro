@@ -58,7 +58,7 @@ test('should click around', async () => {
     // Launches Chromium browser from puppeteer
     const browser = await puppeteer.launch({
 
-        headless:false,
+        headless: false,
         slowMo: 80,
         args: ['--window-size=1920,1080']
 
@@ -77,5 +77,8 @@ test('should click around', async () => {
     await page.click('input#age');
     // Age to be typed into the name input field
     await page.type('input#age', '69');
+
+    // Clicks the button to add the user's info
+    await page.click('#btnAddUser');
 
 });
