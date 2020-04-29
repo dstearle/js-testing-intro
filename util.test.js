@@ -53,14 +53,15 @@ test('should generate a valid text output', () => {
 
 // ******* End To End Tests *******
 
-test('should click around', async () => {
+test('should create a new user', async () => {
 
     // Launches Chromium browser from puppeteer
     const browser = await puppeteer.launch({
 
         headless: false,
-        slowMo: 80,
-        args: ['--window-size=1920,1080']
+        // Uncomment below to view browser in real time
+        // slowMo: 80,
+        // args: ['--window-size=1920,1080']
 
     });
 
