@@ -85,4 +85,6 @@ test('should click around', async () => {
     const finalText = await page.$eval('.user-item', el => el.textContent);
     expect(finalText).toBe('Hammond (69 years old)');
 
-});
+}, 
+    // Required otherwise Jest will timeout and not complete the automated test
+    10000);
